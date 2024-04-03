@@ -25,7 +25,7 @@ boolean Displaying=false;
 boolean selecting=false;
 PImage left, center, right;
 String[] nameReference;
-int musicVolume = -20;
+int musicVolume = 20;
 PImage[] img;
 String[] imgReference;
 PImage textBox;
@@ -53,7 +53,7 @@ void setup() {
 void  draw_logInSetup() {
   minim = new Minim(this);
   SE = minim.loadSample("sound/appear01.wav");
-  SE.setVolume(-20);
+  SE.setVolume(20);
   music = minim.loadFile("sound/n66.mp3");
 
   Branch = loadStrings("Branch.csv");
@@ -158,7 +158,7 @@ void draw_maingameSetup(int route) {
   }
 
   SE = minim.loadSample("sound/appear02.wav");
-  SE.setVolume(-20);
+  SE.setVolume(20);
   Score=0;
 }
 
@@ -184,7 +184,7 @@ void draw_game() {
   } else if ("中央大".equals(name[idx])) {
     background(0);
     fill(0, 0, 99);
-    draw_msg(msg[idx], int(width-textWidth(msg[idx]))/2, height/2, width-25, height, 30);
+    draw_msg(msg[idx], int(width-textWidth(msg[idx]))/2, height/2, width-25, height, 28);
   } else if ("ブラックイン".equals(name[idx])) {
     draw_BlackIn();
     if (selecting == false && Displaying == true) {
@@ -987,7 +987,7 @@ void draw_ReHome(boolean JustStarting) {
     //music.mute();
     SE.close();
     SE = minim.loadSample("sound/appear01.wav");
-    SE.setVolume(-20);
+    SE.setVolume(20);
   }
   selecting = true;
   draw_BlackIn();
