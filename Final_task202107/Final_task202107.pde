@@ -53,7 +53,7 @@ void setup() {
 void  draw_logInSetup() {
   minim = new Minim(this);
   SE = minim.loadSample("sound/appear01.wav");
-  //SE.setGain(-20);
+  SE.setVolume(-20);
   music = minim.loadFile("sound/n66.mp3");
 
   Branch = loadStrings("Branch.csv");
@@ -104,7 +104,7 @@ void  draw() {
 void draw_home() {
   draw_stage(255);
   if (music.isPlaying()==false) {
-    //music.setGain(musicVolume);
+    music.setVolume(musicVolume);
     music.loop();
   }
   textSize(50);
@@ -158,7 +158,7 @@ void draw_maingameSetup(int route) {
   }
 
   SE = minim.loadSample("sound/appear02.wav");
-  //SE.setGain(-20);
+  SE.setVolume(-20);
   Score=0;
 }
 
@@ -330,9 +330,9 @@ void draw_BlackIn() {
   background(0);
   draw_stage(a);
   if (a==0 && Displaying==true) {
-    if (music.isMuted()==false) {
-      music.shiftGain(musicVolume, -50, 1000);
-    }
+    //if (music.isMuted()==false) {
+    //  music.shiftGain(musicVolume, -50, 1000);
+    //}
   }
   if (a<255) {
     a += 10;
@@ -343,9 +343,9 @@ void draw_BlackIn() {
     selecting = false;
     Displaying = true;
     a=0;
-    if (music.isMuted()==true) {
-      music.unmute();
-    }
+    //if (music.isMuted()==true) {
+    //  music.unmute();
+    //}
     music.shiftGain(-60, musicVolume, 4000);
   }
 }
@@ -355,18 +355,18 @@ void draw_BlackOut() {
   fill(0, 0, 0, a);
   rect(0, 0, width, height);
   if (a==0) {
-    if (music.isMuted()==false) {
-      music.shiftGain(musicVolume, -80, 5000);
-    }
+    //if (music.isMuted()==false) {
+    //  music.shiftGain(musicVolume, -80, 5000);
+    //}
   }
   if (a<255) {
     a += 10;
     selecting = true;
     Displaying = false;
   } else {
-    if (music.isMuted()==false) {
-      music.mute();
-    }
+    //if (music.isMuted()==false) {
+    //  music.mute();
+    //}
     startTime = millis();
     selecting = false;
     Displaying = true;
@@ -862,7 +862,7 @@ void draw_Jump() {
     draw_BlackOut();
     if (selecting == false && Displaying == true) {
       State=0;
-      music.unmute();
+      //music.unmute();
       draw_musicChange("o13");
     }
   } else {
@@ -984,10 +984,10 @@ void draw_ReHome(boolean JustStarting) {
   if (JustStarting==true) {
     stage = loadImage("img/home.png");
     draw_musicChange("n66");
-    music.mute();
+    //music.mute();
     SE.close();
     SE = minim.loadSample("sound/appear01.wav");
-    //SE.setGain(-20);
+    SE.setVolume(-20);
   }
   selecting = true;
   draw_BlackIn();
