@@ -346,7 +346,7 @@ void draw_BlackIn() {
     //if (music.isMuted()==true) {
     //  music.unmute();
     //}
-    music.shiftGain(-60, musicVolume, 4000);
+    //music.shiftGain(-60, musicVolume, 4000);
   }
 }
 
@@ -513,14 +513,14 @@ void draw_charaChange(String m) {
 void draw_musicChange(String m) {
   music.close();
   music = minim.loadFile("sound/"+m+".mp3");
-  music.shiftGain(-50, musicVolume, 1000);
+  //music.shiftGain(-50, musicVolume, 1000);
   music.loop();
 }
 
 void draw_endingSetup(String m) {
   music.close();
   music = minim.loadFile("sound/"+m+".mp3");
-  music.shiftGain(-50, musicVolume, 3000);
+  //music.shiftGain(-50, musicVolume, 3000);
   msg = loadStrings("ending.txt");
 }
 
