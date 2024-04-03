@@ -985,7 +985,7 @@ void draw_ReHome(boolean JustStarting) {
     stage = loadImage("img/home.png");
     draw_musicChange("n66");
     //music.mute();
-    SE.close();
+    //SE.close();
     SE = minim.loadSample("sound/appear01.wav");
     SE.setVolume(20);
   }
@@ -1073,10 +1073,10 @@ void draw_InitializeButton() {
 }
 
 void keyTyped() {
-  if (key=='s'||key=='S') {
-    String ScreenShotName = year()+nf(month(), 2)+nf(day(), 2)+"_"+nf(second(), 2);
-    saveFrame("ScreenShot"+"/"+ScreenShotName+".png");
-  }
+  //if (key=='s'||key=='S') {
+  //  String ScreenShotName = year()+nf(month(), 2)+nf(day(), 2)+"_"+nf(second(), 2);
+  //  saveFrame("ScreenShot"+"/"+ScreenShotName+".png");
+  //}
   if (gameState==1) {
     int temp=0;
     if (Lock==1) {
