@@ -3,11 +3,42 @@
 <head>
     <meta charset="utf-8">
     <title>チヨとココのお母さんが風邪引いた！</title>
-    <script type="text/javascript" src="p.minim.js"></script>
     <script type="text/javascript" src="processing.fast.js"></script>
 </head>
+<style>
+    body{
+        text-align: center;
+    }
+
+    .gameCanvas{
+        max-width: 100%;
+    }
+</style>
 <body>
-  
-    <canvas data-processing-sources="../Final_task202107.pde"></canvas>
+    <h1>チヨとココのお母さんが風邪引いた！</h1>
+    <p>このゲームはもともとウィンドウゲームとして作られていたものをブラウザ用に変更したものです。</p>
+    
+    <p>そのため以下の機能が失われています。
+        <span style="
+        text-align: left;
+        text-align: left;
+        margin: auto;
+        margin-top: 10px;
+        width: fit-content;
+        display: block;
+        ">
+        ・スクリーンショット機能<br>
+        ・進行状況に対応したジャンプ機能<br>
+        　(初めからすべての選択肢にジャンプできます)<br>
+        ・曲やSE等の音の再生</span></p>
+
+    <p>上記の機能が失われていないウィンドウゲームは以下からダウンロードできます。
+    (Windows用のみ)<br>
+    <a class="appLink" 
+    href="https://github.com/Sakura115/novel2D/tree/main/exe/Final_task202107/export/" 
+    target="_blank">GitHubへ</a></p>
+
+    <br>
+    <canvas class=gameCanvas data-processing-sources="../Final_task202107.pde"></canvas>
   
 </body>
