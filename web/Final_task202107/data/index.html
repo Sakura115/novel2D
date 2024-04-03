@@ -10,8 +10,19 @@
         text-align: center;
     }
 
-    .gameCanvas{
-        max-width: 100%;
+    #gameCanvas{
+        width: 300px;
+        height: 300px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .scaled-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-origin: center;
     }
 </style>
 <body>
@@ -20,7 +31,6 @@
     
     <p>そのため以下の機能が失われています。
         <span style="
-        text-align: left;
         text-align: left;
         margin: auto;
         margin-top: 10px;
@@ -38,7 +48,25 @@
     href="https://github.com/Sakura115/novel2D/tree/main/exe/Final_task202107/export/" 
     target="_blank">GitHubへ</a></p>
 
-    <br>
-    <canvas class=gameCanvas data-processing-sources="../Final_task202107.pde"></canvas>
+    <div class="scaled-content">
+        <canvas id=gameCanvas data-processing-sources="../Final_task202107.pde"></canvas>
+    </div>
   
 </body>
+
+<script>
+        function applyScaling() {
+            const canvas = document.getElementById('gameCanvas');
+            const canvasWidth = canvas.width;
+            const screenWidth = window.innerWidth;
+            const scale = screenWidth / canvasWidth /100*80;
+            const scaledContent = document.querySelector('.scaled-content');
+            scaledContent.style.transform = "scale("+(scale>1 ? 1 : scale)+")";
+        }
+
+        // ページ読み込み完了時にスケーリングを適用
+        window.addEventListener('load', applyScaling);
+
+        // ウィンドウサイズが変更された時にスケーリングを再適用
+        window.addEventListener('resize', applyScaling);
+</script>
