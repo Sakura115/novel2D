@@ -530,9 +530,10 @@ void draw_ending(String[] m) {
   textAlign(LEFT, TOP);
   float h = textAscent() + textDescent() + 10;
   //music.play();
-  if (millis()-startTime <= 18) {
+  int musicLength=35000;
+  if (millis()-startTime <= musicLength) {
     for (int i=0; i<6; i++) {
-      int s = 18/6;
+      int s = musicLength/6;
       if ((s*i < millis()-startTime) && (millis()-startTime <= s*(i+1))) {
         if ((s*i < millis()-startTime) && (millis()-startTime <= s*i+s/3)) {
           a = int(map(millis()-startTime, s*i, s*i+s/3, 0, 254));
@@ -559,7 +560,7 @@ void draw_ending(String[] m) {
         image(IMG, width/3*2+w+IMG.width/(S*2), IY, IMG.width/S, IMG.height/S);
       }
     }
-    float y = map(millis()-startTime, 0, 18, height+10, -h*m.length);
+    float y = map(millis()-startTime, 0, musicLength, height+10, -h*m.length);
     for (int  i=0; i < m.length; i++) {
       text(m[i], 20, y+h*i);
     }
