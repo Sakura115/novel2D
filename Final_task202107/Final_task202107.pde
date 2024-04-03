@@ -53,7 +53,7 @@ void setup() {
 void  draw_logInSetup() {
   minim = new Minim(this);
   SE = minim.loadSample("sound/appear01.wav");
-  SE.setGain(-20);
+  //SE.setGain(-20);
   music = minim.loadFile("sound/n66.mp3");
 
   Branch = loadStrings("Branch.csv");
@@ -104,7 +104,7 @@ void  draw() {
 void draw_home() {
   draw_stage(255);
   if (music.isPlaying()==false) {
-    music.setGain(musicVolume);
+    //music.setGain(musicVolume);
     music.loop();
   }
   textSize(50);
@@ -158,7 +158,7 @@ void draw_maingameSetup(int route) {
   }
 
   SE = minim.loadSample("sound/appear02.wav");
-  SE.setGain(-20);
+  //SE.setGain(-20);
   Score=0;
 }
 
@@ -987,7 +987,7 @@ void draw_ReHome(boolean JustStarting) {
     music.mute();
     SE.close();
     SE = minim.loadSample("sound/appear01.wav");
-    SE.setGain(-20);
+    //SE.setGain(-20);
   }
   selecting = true;
   draw_BlackIn();
